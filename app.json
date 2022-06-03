@@ -19,19 +19,26 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.foodecommerce.alpha.kevintivert",
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyBWsiIS7At5hn00E87XaUCRcHOPnJJmP1k"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.foodecommerce.alpha.kevintivert"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "packagerOpts": {
-      "sourceExts": ["cjs"]
+      "sourceExts": [
+        "cjs"
+      ]
     }
   }
 }

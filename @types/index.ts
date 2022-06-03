@@ -29,3 +29,26 @@ export type tokenType = {
     refresh_token: string;
   };
 };
+
+export type userInfo = {
+  id: string;
+  username: string;
+  email: string;
+  first_name: string;
+  last_name: string;
+  img: string;
+  role: string;
+};
+
+export type authResultType = {
+  user_info: userInfo;
+  access_token: tokenType["tokenJWT"]["access_token"];
+  refresh_token: tokenType["tokenJWT"]["refresh_token"];
+};
+
+export type geoLocationType = {
+  latitude: number;
+  longitude: number;
+  latitudeDelta: number;
+  longitudeDelta: number;
+};

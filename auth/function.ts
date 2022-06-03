@@ -1,11 +1,5 @@
-import axios, { AxiosPromise, AxiosResponse } from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { tokenType } from "../../@types";
-import {
-  getGoogleOAuthToken,
-  jwtAccessToken,
-  jwtRefreshToken,
-} from "../../redux/state/tokenState";
+import { NGROK_URL } from "@env";
+import axios from "axios";
 
 export const getUserDataFromGoogleOAuthV2 = async (token?: string) => {
   let userInfoResponse = await fetch(
@@ -20,9 +14,9 @@ export const getUserDataFromGoogleOAuthV2 = async (token?: string) => {
   });
 };
 
-export const getNewUserTokens = async (googleOAuthTokenResult: string) => {
-  const URL = "https://7945-2c0f-eb68-203-db00-3d72-6d48-bc4e-7bdb.eu.ngrok.io";
-  // const googleOAuthTokenResult = useSelector(getGoogleOAuthToken);
+export const getUserAuthDetails = async (googleOAuthTokenResult: string) => {
+  const URL = NGROK_URL;
+
   const config = {
     headers: { Authorization: `Bearer ${googleOAuthTokenResult}` },
   };
